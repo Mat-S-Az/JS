@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Vamos contar</h1>
+    <div id="card">
+        <div id="divInicio" class="divinput">
+            <p>Início: </p>
+            <input type="number" name="inicio" id="inicio" class="caixainput">
+        </div>
+        <div id="divFim"  class="divinput">
+            <p>Fim: </p>
+            <input type="number" name="fim" id="fim" class="caixainput">
+        </div>
+        <div id="divPasso"  class="divinput">
+            <p>Passo: </p>
+            <input type="number" name="passo" id="passo" class="caixainput">
+        </div>
+        <input type="button" value="Calcular" onclick="calcular()" id="botao">
+        <p id="resultado">
+            Preparando a contagem...
+        </p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

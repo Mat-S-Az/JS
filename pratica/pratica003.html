@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0%;
+            padding: 0%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            height: 100vh;
+            justify-items: center;
+            align-items: center;
+            background-color: rgb(1, 110, 110);
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        h1 {
+            grid-column: 2;
+            grid-row: 1;
+            align-self: last baseline;
+            color: rgb(255, 251, 251);
+            text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.144);           
+        }
+        footer {
+            grid-column: 2;
+            grid-row: 3;
+            align-self: baseline;
+            color: aliceblue;
+        }
+        #divpai {
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            align-items: center;
+            padding: 10px;
+            grid-column: 2;
+            grid-row: 2;
+            background-color: rgb(242, 247, 247);
+            
+            width: 50vw;
+            border-radius: 8px;
+            box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.209);
+        }
+        #paragrafo {
+            justify-self: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        #container{
+            
+            margin: 30px;
+            aspect-ratio: 1 / 1;
+            flex-grow: 1;
+            max-height: 70%;
+            width: 100%;
+            height: 300px;
+           
+        }
+        #container img{
+            
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 8px;
+        }
+        #info {
+            display: flex;
+            align-self: flex-start;
+        }
+        #ano{
+            margin: 5px;
+            height: 1em;
+            align-self: center;
+        }
+        #FM{
+            display: flex;
+            align-self: flex-start;
+            
+           
+        }
+        label{
+            align-self: center;
+        }
+        #botao{
+            align-self: flex-start;
+            background-color: rgb(58, 73, 74);
+            color: white;
+           
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1 id="H">Verificador de Idade</h1>
+    <div id="divpai">
+        <div id="info">
+            <p>Digite seu ano de nascimento:  </p> <input type="number" id="ano" name="ano" >
+        </div>
+        <div id="FM">
+            <p> Sexo: </p>
+            <label><input type="radio" name="sexo" value="Homem"> Masculino</label>
+             <label><input type="radio" name="sexo" value="Mulher"> Feminino</label>
+        </div>
+        <input type="button" value="Verificar" onclick="verificar()" id="botao">
+        <p id="idadeDisplay"></p>
+        <div id="container">
+            <img src="imagens/first.jpg" alt="" id="imagem">
+        </div>
+
+       
+    </div>
+    <footer >
+        <p id="rodape">Matheus Azevedo</p>
+    </footer>
+    <script>
+        var imagem = document.getElementById('imagem')
+        var idadis = document.getElementById('idadeDisplay')
+        var agora = new Date()
+        var anoAtual = agora.getFullYear()
+        var nasci = document.getElementById('ano')
+        function verificar(){
+            var sexo = document.querySelector('input[name="sexo"]:checked').value
+            var idade = anoAtual - Number(nasci.value)
+            idadis.innerHTML = (`Detectamos ${sexo} com ${idade} anos`)
+            if (sexo === 'Homem' && idade < 30){
+                imagem.src = "imagens/Hjovem.jpg"
+            } else if (sexo === 'Homem' && idade > 30){
+                imagem.src = "imagens/Hvelho.jpg"
+            } else if (sexo === 'Mulher' && idade < 30){
+                imagem.src = "imagens/Mjovem.jpg"
+            }else if (sexo === 'Mulher' && idade > 30){
+                imagem.src = "imagens/Mvelha.jpg"
+            }else {
+                 imagem.src = "imagens/sorry.jpg"
+            }
+
+
+        }
+        
+
+
+    </script>
+    
+</body>
+</html>

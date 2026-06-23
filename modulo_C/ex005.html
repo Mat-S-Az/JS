@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {
+            background-color: rgb(227, 251, 243);
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 10px;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+            
+        }
+        #bloco{
+          grid-row: 2/3;
+          grid-column: 1/-1;
+          
+           
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="bloco">
+        <h1 id="titulo">Estudos em DOM</h1>
+        <p>Aqui vai o resultado</p>
+        <p>Apendendo a usar <strong>DOM</strong> em JavaScript</p>
+        <div>Clique em mim</div>
+    </div>
+   
+    <script>
+        var p1 = document.getElementsByTagName('p')[0]
+        p1.style.color = 'blue'
+        document.write(p1.innerHTML).style.color = 'blue'
+        var t = document.querySelector('h1#titulo')
+        t.style.color = 'red'
+
+    </script>
+    
+</body>
+</html>

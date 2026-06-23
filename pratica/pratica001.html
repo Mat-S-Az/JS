@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3em;
+            color: rgb(4, 59, 41);
+            text-shadow: 1px 1px 8px black;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var nome = prompt('Nome do aluno: ')
+        var n1 = Number(prompt('Nota da prova 1: '))
+        var n2 = Number(prompt('Nota da prova 2: '))
+        var n3 = Number(prompt('Nota da prova 3: '))
+        var media = (n1+n2+n3) / 3
+        document.write(`O aluno ${nome} foi ${media>=7?'Aprovado':'Reprovado'}`)
+    </script>
+</body>
+</html>

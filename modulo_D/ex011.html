@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 30px;
+            background-color: rgb(69, 160, 115);
+            color:aliceblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1, p, input, div {
+            margin: 15px;
+            text-shadow: 1px 1px 8px #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você é brasileiro?</h1>
+    Digite o país que você nasceu: <input type="text" id="text" name="text"> <input type="button" onclick="verificar()" value="Verificar">
+    <div id="resposta">
+
+    </div>
+    <script>
+        var text = document.getElementById('text')
+        var resposta = document.getElementById('resposta')
+        function verificar(){
+            if (text.value.toUpperCase() == 'BRASIL') {
+                resposta.innerHTML = '<p>Parabéns, você é brasileiro.</p>'
+            } else {
+                resposta.innerHTML = '<p>Sinto muito, tente na próxima vida.</p>'
+            } 
+        }
+        
+    </script>
+
+
+    
+</body>
+</html>

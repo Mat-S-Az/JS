@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventos dom</title>
+    <style>
+        body {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+            height: 97vh;
+        }
+        div#area{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: rgb(4, 76, 76);
+            color: aliceblue;
+            height: 200px;
+            width: 200px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 2em;
+            cursor: pointer;
+            grid-row: 2/3;
+            grid-column: 1/-1;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        interaja...
+    </div>
+
+    <script>
+        var area = document.getElementById('area')
+        area.addEventListener('click', clicar)
+        area.addEventListener('mouseenter', entrou)
+        area.addEventListener('mouseleave', saiu)
+
+        function clicar() {
+            area.innerText = 'Interagiu...'
+            area.style.backgroundColor = 'blueviolet'
+        }
+        function entrou() {
+            area.innerText = 'Entrou...'
+            area.style.backgroundColor = ' rgb(46, 175, 132)'
+
+        }
+        function saiu() {
+            area.innerText = 'Saiu...'
+            area.style.backgroundColor = 'rgb(255, 94, 0)'
+           
+        }
+    </script>
+    
+</body>
+</html>
